@@ -13,44 +13,44 @@ PC는 하드웨어 위에 운영체제가 올라가고 그것을 커널을 통�
 
 ## 3. Docker 용어 설명
 배포를 하면서 계속해서 환경을 맞춰 만들어주기위해 Docker를 사용
-* Docker Image
+* Docker Image<br/>
 도커 이미지란 애플리케이션과 그 애플리케이션을 실행하기 위한 모든 환경을 묶어서 저장한 파일
 > build시 dockerfile을 끌어다가 씀
 
-* Docker Container
+* Docker Container<br/>
 현제 인스턴스에서 실행중이거나 실행할수있는 이미지를 뜻함
 
-* Docker Hub
+* Docker Hub<br/>
 모든 사용자들의 도커 이미지가 공유되어 있는 저장소
 
-* Docker Repository
+* Docker Repository<br/>
 도커 이미지를 빌드하여 Push한 저장소, 
 
-* Docker Compose
+* Docker Compose<br/>
 명령어 한번으로 여러 컨테이너를 키고 끌수있는 서비스
 > docker-compose.yml 파일을 끌어다가 씀
 
-* Docker Build 명령어
+* Docker Build 명령어<br/>
 dockerfile에 명시되어있는 것들을 도커 이미지로 만듬
 
-- Docker push 명령어
+- Docker push 명령어<br/>
 build한 도커 이미지를 Docker Hub Repository에 올림
 
-- Docker pull 명령어
+- Docker pull 명령어<br/>
 Docker Hub Repository에 올라가있는 이미지를 가져옴
 
-- Docker down 명령어
+- Docker down 명령어<br/>
 현재 실행되어있는 이미지 즉 컨테이너를 내림
 
-- Docker up 명령어
+- Docker up 명령어<br/>
 현재 pull해서 가져온 이미지를 컨테이너에 올림
 > 명령어는 docker-compose와 비슷합니다.
 
 > 예상 시나리오
-> 1. 컨테이너가 하나만 필요할 경우
-> 필요한 의존 파일들을 dockerfile에 명시해주고 build를 통해 Docker Repository에 push 해주고 Hub에 방금 올라간 파일을 가져와서 Container를 띄운다
-> 2. 컨테이너가 여러개 필요한 경우
-> 필요한 의존 파일들을 컨테이너 마다 dockerfile을 만들어주고 docker-compose.yml에 필요한 컨테이너에 dockerfile 연결해주고 docker-compose 명령어를 통해 build -> push -> pull로 container 인스턴스에 올림.
+> 1. 컨테이너가 하나만 필요할 경우<br/>
+> 필요한 의존 파일들을 dockerfile에 명시해주고 build를 통해 Docker Repository에 push 해주고 Hub에 방금 올라간 파일을 가져와서 Container를 띄운다<br/>
+> 2. 컨테이너가 여러개 필요한 경우<br/>
+> 필요한 의존 파일들을 컨테이너 마다 dockerfile을 만들어주고 docker-compose.yml에 필요한 컨테이너에 dockerfile 연결해주고 docker-compose 명령어를 통해 build -> push -> pull로 container 인스턴스에 올림.<br/>
 
 ## 4. 예제 파일 - gitaction으로 docker container에 app1,app2,nginx 올리기
 소스 파일 : https://github.com/helloJosh/test-cicd
