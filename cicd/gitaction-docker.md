@@ -2,7 +2,7 @@
 ## 1. git action이란?
 CICD 툴 중하나, 즉 개발하는 플로우를 자동화할수 있게해주는 툴.
 
-> 예로 배포를 할때 인스턴스에 자바를 설치하고 mvn package와 sonar qube를 직접 손으로 적용시켜야 했다면, git action으로 코드로 이모든 과정을 자동화 할수 있음.<br/>
+> 예로 배포를 할때 인스턴스에 자바를 설치하고 mvn package와 sonar qube를 직접 손으로 적용시켜야 했다면, git action 코드로 이모든 과정을 자동화 할수 있음.<br/>
 > 예제 : https://github.com/nhnacademy-bootcamp/project-ci-cd/blob/main/docs/07.git-action-configuration/index.adoc
 
 ## 2.  Docker란?
