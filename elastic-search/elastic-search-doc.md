@@ -34,7 +34,7 @@ docker로 설치후 container 이미지 받아와서 실행
 - 인덱스(인디시즈) : 이 도큐먼트를 모아놓은 집합
 - 색인 : elastic search에 저장하는 행위
 
-- 샤드 : 인덱스가 기본적으로 분리되고 각 노드에 분산되어 자장되는 것
+- 샤드 : 인덱스가 기본적으로 분리되고 각 노드에 분산되어 자장되는 것 <br>
 ![image](https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/fe241365-5c03-47fc-a977-8a3bfde9105c)
 
 - 마스터 노드 : Elasticsearch 클러스터는 하나 이상의 노드들로 이루어집니다. 이 중 하나의 노드는 인덱스의 메타 데이터, 샤드의 위치와 같은 클러스터 상태(Cluster Status) 정보를 관리하는 마스터 노드의 역할
