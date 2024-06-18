@@ -109,17 +109,17 @@ GET tags/{id}/projects/{id}/books
 - 도서
     - 도서 상세 페이지
 
-3runner-gateway → 8080 
+3runner-front → 3000, 3001
 
-3runner-eureka → 8761
+3runner-gateway → 8080
 
 3runeer-bookstore → 8081, 8082
 
-3runner-coupon
+3runner-coupon → 8083
 
-3runner-auth
+3runner-eureka → 8761
 
-3runner-front
+3runner-auth → 8090
 
 ## 도커
 
