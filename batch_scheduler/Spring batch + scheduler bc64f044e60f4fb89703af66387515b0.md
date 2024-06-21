@@ -26,7 +26,6 @@
 
 - JobLauncher: 배치 작업(Job)을 시작하는 데 사용된다. 실행할 Job과 매개변수를 받아 작업을 실행한다.
     
-    세부 사항을 추가하세요
     
 
                                 이후 스케줄러로 주기적 작업을 하는데 사용될 예정이다.
@@ -86,12 +85,16 @@ public class ScheduledTasks {
 Step1) Spring batch IO라는 dependency 설정하기
 
 - 종속성을 넣는다.
-<!-- [https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-core](https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-core) -->
-- <dependency>
-- <groupId>org.springframework.batch</groupId>
-- <artifactId>spring-batch-core</artifactId>
-- <version>5.1.2</version>
-- </dependency>
+
+    ```
+    <!-- https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-core -->
+    <dependency>
+        <groupId>org.springframework.batch</groupId>
+        <artifactId>spring-batch-core</artifactId>
+        <version>5.1.2</version>
+    </dependency>
+    ```
+
     
   
     
