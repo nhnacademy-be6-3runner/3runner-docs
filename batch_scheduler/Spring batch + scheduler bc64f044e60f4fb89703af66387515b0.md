@@ -46,14 +46,14 @@
 
 - 스프링 스케줄러는 스프링 프레임워크의 일부로, 메서드를 정해진 시간이나 간격에 따라 실행할 수 있도록 도와준다.  스프링 배치와 함께 스프링 스케줄러를 사용하면 배치 Job을 자동화하고 일정에 따라 실행할 수 있다. 이를 통해 배치 Job을 예약하고 관리하는 과정을 간소화할 수 있다.
     
-    세부 사항을 추가하세요
+
     
 
 스케줄러 방식은?
 
 - **Task Scheduling**: 스프링 스케줄러를 사용하면 특정 시간에 메서드를 실행하도록 예약할 수 있습니다. 이는 주로 `@Scheduled` 어노테이션을 메서드 위에 선언하여 사용한다.
     
-    세부 사항을 추가하세요
+
     
 - **Cron Expression**: 스프링 스케줄러는 UNIX 시스템의 cron과 유사한 형식을 사용하여 작업 실행 시간을 지정할 수 있다. 이 표현식을 통해 복잡한 스케줄링 요구 사항을 정의할 수 있다.
 - **Fixed Rate and Fixed Delay**: 스프링 스케줄러는 고정된 주기(fixed rate)나 작업 완료 후 고정된 지연 시간(fixed delay)을 설정하여 주기적으로 작업을 실행할 수 있게 해준다.
@@ -87,13 +87,13 @@ Step1) Spring batch IO라는 dependency 설정하기
 
 - 종속성을 넣는다.
 <!-- [https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-core](https://mvnrepository.com/artifact/org.springframework.batch/spring-batch-core) -->
-<dependency>
-<groupId>org.springframework.batch</groupId>
-<artifactId>spring-batch-core</artifactId>
-<version>5.1.2</version>
-</dependency>
+- <dependency>
+- <groupId>org.springframework.batch</groupId>
+- <artifactId>spring-batch-core</artifactId>
+- <version>5.1.2</version>
+- </dependency>
     
-    세부 사항을 추가하세요
+  
     
 
 Step2) Spring Batch 플러그인 설치하기- dependency를 설정하면 설치하라는 문구가 뜬다.
@@ -104,7 +104,7 @@ Step3) 어플리케이션 실행 클래스에 @EnableBatchProcessing 어노테�
 
 - 예시:
     
-    세부 사항을 추가하세요
+   
     
 
 ```java
@@ -123,7 +123,7 @@ Step4) 베치에 필요한 데이터 테이블을 생성한다.
 
 - 목표는 배치를 통해 데이터 베이스를 처리하는 것인데 이를 위해서는 몇개의 데이터 테이블을 생성해 놓아야한다. 테이블들에는 Job의 이름, 실행 시간, job_id나 Step의 이름, 실행시간, step_id 등 배치를 실행했을때 생성되는 데이터 들이 들어가게 된다. (없으면 실행이 안됌)
     
-    세부 사항을 추가하세요
+    
     
 - 생성해야 하는 테이블을 생성하는 sql문의 경로는 /org/springframework/batch/spring-batch-core/5.1.2/spring-batch-core-5.1.2.jar!/org/springframework/batch/core/schema-mysql.sql이다. 아래에 폴더를 열면 있는 파일을 클릭하면 테이블을 생성하는 sql문이 있다. 그걸 실행해서 테이블을 생성하면 된다.
 
