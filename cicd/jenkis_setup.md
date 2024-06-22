@@ -13,7 +13,8 @@
 <img width="1157" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/c7a70008-ab30-40cf-bc85-583ef1685c35">
 
 - 해보고 지금 빌드에서 Console output확인
-<img width="1157" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/f2d4c5c7-eb9a-4f3b-97ab-e77c587aac94">
+<img width="1409" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/e6c21450-f4f3-4675-a9aa-ca0b11c1aaad">
+
 
 ## 5. sonarqube설정(새로 프로젝트파서 만드는거 추천)
 - SonarQube 프로젝트 설정(prebuild step에서 execute sonarqube scan 추가)
@@ -24,7 +25,8 @@
 - 아까 넣었던 프로젝트 설정해주고 밑에도 값들 넣어줌
 <img width="971" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/ecb25712-60bb-4ee4-b14e-c9fd55e82e7e">
 - 해보고 지금 빌드에서 Console output확인
-<img width="1157" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/f2d4c5c7-eb9a-4f3b-97ab-e77c587aac94">
+<img width="1409" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/40ce7d8d-feb7-4948-9d55-e68cb1e87ab4">
+
 
 ## 6. shellscript 추가
 - 자격증명추가 젠킨스관리 -> 시스템가서 호스트 이름만 추가
@@ -58,6 +60,9 @@ java -jar /gateway/gateway.jar
 ```
 리눅스는 bash shell 을 쓰기 때문에 #!/bin/bash써야함 맥처럼 zsh아님
 
+
+- 해보고 지금 빌드에서 Console output확인
+<img width="1409" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/40ce7d8d-feb7-4948-9d55-e68cb1e87ab4">
 
 
 
