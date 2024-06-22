@@ -17,8 +17,9 @@
 
 
 ## 5. sonarqube설정(새로 프로젝트파서 만드는거 추천)
-- SonarQube 프로젝트 설정(prebuild step에서 execute sonarqube scan 추가)
-<img width="1157" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/c3f9806b-1828-4d9c-88ff-1fbe9a1a4ae2">
+- SonarQube 프로젝트 설정(prebuild step에서 execute sonarqube scan 추가 하기전에 프로젝트를 밑에서 등록해야함 시스템에서)
+<img width="1367" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/242138b3-bec9-4068-801f-50bbb4494d81">
+
 - 자격증명은 crendtial 밑에 목록에서 global누르면 아래화면이 나오고 여기에서 키 추가를 누름
 <img width="1442" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/c75df2dd-bf01-4928-9563-e686200dcd8b">
 - 소나큐브 토큰값 넣어줌 secret text항목으로 넣어서 값 넣어주면됨
