@@ -80,6 +80,8 @@ entrypoint.sh은
 
 java -jar /gateway/gateway.jar
 ```
+
+
 리눅스는 bash shell 을 쓰기 때문에 #!/bin/bash써야함 맥처럼 zsh아님
 
 
