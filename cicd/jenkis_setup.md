@@ -81,6 +81,21 @@ entrypoint.sh은
 java -jar /gateway/gateway.jar
 ```
 
+Dockerfile은
+```dockerfile
+FROM eclipse-temurin:21-jre
+
+WORKDIR /gateway
+
+COPY ./target/gateway.jar /gateway/gateway.jar
+
+EXPOSE 8080
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+```
 
 리눅스는 bash shell 을 쓰기 때문에 #!/bin/bash써야함 맥처럼 zsh아님
 
