@@ -23,6 +23,7 @@
 - 자격증명은 crendtial 밑에 목록에서 global누르면 아래화면이 나오고 여기에서 키 추가를 누름
 <img width="1442" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/c75df2dd-bf01-4928-9563-e686200dcd8b">
 - 소나큐브 토큰값 넣어줌 secret text항목으로 넣어서 값 넣어주면됨
+- 
 - 아까 넣었던 프로젝트 설정해주고 밑에도 값들 넣어줌
 <img width="971" alt="image" src="https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/ecb25712-60bb-4ee4-b14e-c9fd55e82e7e">
 - 해보고 지금 빌드에서 Console output확인
