@@ -4,3 +4,9 @@
 #erd 0.02
 ![bookstore (3)](https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/0d64de1f-5b58-470f-b0ec-1302a12a1fc1)
 - 식별키 제거후 쿠폰 기본키 자동생성으로 변경
+
+#erd 0.03
+![bookstore (4)](https://github.com/nhnacademy-be6-3runner/3runner-docs/assets/37134368/8e24e831-edb8-4122-8d59-8e01eeff4742)
+- 쿠폰 erd수정
+- 쿠폰 사용처를 여러개 설정할수있도록 설정
+- 사용처에 전체를 설정할수 있게하여 고정, 비율쿠폰을 사용할수있게끔 설계
