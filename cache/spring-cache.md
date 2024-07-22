@@ -151,6 +151,57 @@ public class RedisCacheConfig {
 }
 ```
 
+### 캐시 어노테이션 적용하기
+
+```
+/**
+	 * 도서 페이지 조회 메서드입니다.
+	 * @param page 페이지
+	 * @param size 사이즈
+	 * @return 도서 리스트
+	 */
+	@Override
+	@Cacheable(value = "BookPage", key = "#page + '-' + #size + '-' + #sort", cacheManager = "cacheManager")
+	public Page<BookListResponse> readAllBooks(int page, int size, String sort) {
+		ApiResponse<Page<BookListResponse>> response = bookClient.readAllBooks(page, size, sort);
+
+		if (response.getHeader().isSuccessful() && response.getBody() != null) {
+			return response.getBody().getData();
+		} else {
+			throw new InvalidApiResponseException("도서 페이지 조회 exception");
+		}
+	}
+```
+- @Cacheable : 해당 메서드 호출 전 캐시 스토어에 데이터 조회, 만약 없으면 메서드 로직 수행
+
+```
+	@Override
+	@CacheEvict(value = {"BookPage", "CategoryBooks", "AdminBookPage"}, allEntries = true)
+	public void updateBook(long bookId, UserCreateBookRequest userCreateBookRequest, String imageName) {
+
+		CreateBookRequest updateBookRequest = CreateBookRequest.builder()
+			.title(userCreateBookRequest.title())
+			.description(userCreateBookRequest.description())
+			.publishedDate(stringToZonedDateTime(userCreateBookRequest.publishedDate()))
+			.price(userCreateBookRequest.price())
+			.quantity(userCreateBookRequest.quantity())
+			.sellingPrice(userCreateBookRequest.sellingPrice())
+			.packing(userCreateBookRequest.packing())
+			.author(userCreateBookRequest.author())
+			.isbn(userCreateBookRequest.isbn())
+			.publisher(userCreateBookRequest.publisher())
+			.imageName(imageName)
+			.imageList(descriptionToImageList(userCreateBookRequest.description()))
+			.tagIds(stringIdToList(userCreateBookRequest.tagList()))
+			.categoryIds(stringIdToList(userCreateBookRequest.categoryList()))
+			.build();
+
+		bookClient.updateBook(bookId, updateBookRequest);
+	}
+
+```
+- @CacheEvict : 캐시에 저장된 데이터가 수정/삭제될 경우 캐시 삭제
+
 - redis를 캐시 스토어로 사용
 - 데이터 직렬화 / 역직렬화
 - Jackson을 사용하여 json 형식으로 데이터 저장
