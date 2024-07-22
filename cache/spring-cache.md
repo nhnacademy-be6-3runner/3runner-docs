@@ -1,7 +1,3 @@
-# Spring Cache
-
-태그: Cache
-
 # Spring Cache를 사용하여 조회 성능 개선 (Jmeter로 성능 측정하기)
 
 
