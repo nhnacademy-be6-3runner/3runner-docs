@@ -150,6 +150,22 @@ public class RedisCacheConfig {
     }
 }
 ```
+- redis를 캐시 스토어로 사용
+- 데이터 직렬화 / 역직렬화
+- Jackson을 사용하여 json 형식으로 데이터 저장
+- `registerModule(new PageJacksonModule)` : 페이지 모듈을 등록하여 페이징된 데이터의 직렬화 / 역직렬화 설정
+- 왜 Object Mapper 사용?
+    - json 데이터에 알 수 없는 속성이 포함되었을 때 오류 방지
+    - 
+    
+    ```java
+    com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "hasContent" (class org.springframework.cloud.openfeign.support.PageJacksonModule$SimplePageImpl), not marked as ignorable (6 known properties: "size", "content", "totalElements", "sort", "pageable", "number"])
+     at [Source: REDACTED (StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION disabled); line: 1, column: 2954] (through reference chain: org.springframework.cloud.openfeign.support.PageJacksonModule$SimplePageImpl["hasContent"])
+    	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61) ~[jackson-databind-2.17.1.jar:2.17.1]
+    	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:1153) ~[jackson-databind-2.17.1.jar:2.17.1]
+    ```
+    
+    → json이 인식하지 못하는 데이터 ‘hasContent’ → jackson 설정을 통해 알 수 없는 속성 무시하도록 설정
 
 ### 캐시 어노테이션 적용하기
 
@@ -201,23 +217,6 @@ public class RedisCacheConfig {
 
 ```
 - @CacheEvict : 캐시에 저장된 데이터가 수정/삭제될 경우 캐시 삭제
-
-- redis를 캐시 스토어로 사용
-- 데이터 직렬화 / 역직렬화
-- Jackson을 사용하여 json 형식으로 데이터 저장
-- `registerModule(new PageJacksonModule)` : 페이지 모듈을 등록하여 페이징된 데이터의 직렬화 / 역직렬화 설정
-- 왜 Object Mapper 사용?
-    - json 데이터에 알 수 없는 속성이 포함되었을 때 오류 방지
-    - 
-    
-    ```java
-    com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "hasContent" (class org.springframework.cloud.openfeign.support.PageJacksonModule$SimplePageImpl), not marked as ignorable (6 known properties: "size", "content", "totalElements", "sort", "pageable", "number"])
-     at [Source: REDACTED (StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION disabled); line: 1, column: 2954] (through reference chain: org.springframework.cloud.openfeign.support.PageJacksonModule$SimplePageImpl["hasContent"])
-    	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:61) ~[jackson-databind-2.17.1.jar:2.17.1]
-    	at com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:1153) ~[jackson-databind-2.17.1.jar:2.17.1]
-    ```
-    
-    → json이 인식하지 못하는 데이터 ‘hasContent’ → jackson 설정을 통해 알 수 없는 속성 무시하도록 설정
     
 
 ## 📍 메인 페이지 캐시 적용 결과 비교
