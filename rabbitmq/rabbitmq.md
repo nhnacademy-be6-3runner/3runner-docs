@@ -47,8 +47,8 @@ producer에서 정의된 header의 key-value 쌍과 consumer에서 정의된 arg
 broadcast
 
 ## RabbitMq, Kafka?
-메시지 브로커 : pub/sub 구조라고 하며 대표적으로는 Redis, RabbitMQ 소프트웨어가 있고, GCP의 pubsub, AWS의 SQS 같은 서비스가 있다.
-이벤트 브로커 : 메시지 브로커의 역할도 하지만 차이점은 이벤트 브로커는 publisher가 생산한 이벤트를 이벤트 처리 후에 바로 삭제하지 않고 저장하여, 이벤트 시점이 저장되어 있어서 consumer가 특정 시점부터 이벤트를 다시 consume 할 수 있는 장점이 있다. (예를 들어 장애가 일어난 시점부터 그 이후의 이벤트를 다시 처리할 수 있음) 대용량으로 더 많은 데이터를 처리할수있다. 대표적 Kafka, AWS의 kinesis가 있다.
+- 메시지 브로커 : pub/sub 구조라고 하며 대표적으로는 Redis, RabbitMQ 소프트웨어가 있고, GCP의 pubsub, AWS의 SQS 같은 서비스가 있다.
+- 이벤트 브로커 : 메시지 브로커의 역할도 하지만 차이점은 이벤트 브로커는 publisher가 생산한 이벤트를 이벤트 처리 후에 바로 삭제하지 않고 저장하여, 이벤트 시점이 저장되어 있어서 consumer가 특정 시점부터 이벤트를 다시 consume 할 수 있는 장점이 있다. (예를 들어 장애가 일어난 시점부터 그 이후의 이벤트를 다시 처리할 수 있음) 대용량으로 더 많은 데이터를 처리할수있다. 대표적 Kafka, AWS의 kinesis가 있다.
 
 ## kafka의 동작 방식
 
