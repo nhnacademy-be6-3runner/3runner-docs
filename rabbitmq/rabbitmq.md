@@ -17,6 +17,7 @@ AMQP를 구현한 오픈소스 메세지 브로커이다. producers에서 consum
 ![image](https://github.com/user-attachments/assets/5e127281-e3a1-4ef8-ba89-f376da5d497a)
 
 - Direct Exchange
+
 ![image](https://github.com/user-attachments/assets/ed81d2a5-4085-4392-8cc9-7d3167a456e1)
 
 일치하는 Queue에만 전송
