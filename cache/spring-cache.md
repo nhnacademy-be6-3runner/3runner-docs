@@ -169,7 +169,7 @@ public class RedisCacheConfig {
 
 ### 캐시 어노테이션 적용하기
 
-```
+```java
 /**
 	 * 도서 페이지 조회 메서드입니다.
 	 * @param page 페이지
@@ -190,7 +190,7 @@ public class RedisCacheConfig {
 ```
 - @Cacheable : 해당 메서드 호출 전 캐시 스토어에 데이터 조회, 만약 없으면 메서드 로직 수행
 
-```
+```java
 	@Override
 	@CacheEvict(value = {"BookPage", "CategoryBooks", "AdminBookPage"}, allEntries = true)
 	public void updateBook(long bookId, UserCreateBookRequest userCreateBookRequest, String imageName) {
